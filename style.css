@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
@@ -11,18 +10,17 @@ body {
     justify-content: center;
 }
 
-.todos-bg-container {
-    background: rgba(255, 255, 255, 0.8);
+.container {
+    background:whitesmoke;
     backdrop-filter: blur(10px);
     height: 90vh;
     width: 90vw;
     border-radius: 15px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     padding: 20px;
-    overflow-y: auto;
+    overflow: hidden;
 }
 
-.todos-heading {
+h1 {
     text-align: center;
     font-family: 'Lobster', cursive;
     font-size: 46px;
@@ -32,39 +30,17 @@ body {
     color: #444;
     text-shadow: 1px 1px 2px #aaa;
 }
-
-.create-task-heading,
-.todo-items-heading {
-    font-family: 'Bree Serif', serif;
-    font-size: 32px;
-    font-weight: 700;
+h2 {
+    font-family: 'Lobster', cursive;
+    font-size: 46px;
+    font-weight: 500;
     margin-top: 20px;
-    color: #333;
+    margin-bottom: 20px;
+    color: #444;
+    text-shadow: 1px 1px 2px #aaa;
 }
 
-.todo-items-container {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-}
-
-.todo-item-container {
-    background: #fff;
-    border-radius: 10px;
-    margin-top: 15px;
-    padding: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-    transition: transform 0.3s ease, background 0.3s ease;
-}
-
-.todo-item-container:hover {
-    transform: scale(1.02);
-    background: #f1f1f1;
-}
-
-.todo-user-input {
+input{
     background-color: white;
     width: 100%;
     border: 1px solid #e4e7eb;
@@ -75,12 +51,12 @@ body {
     transition: border-color 0.3s ease;
 }
 
-.todo-user-input:focus {
+input:focus {
     border-color: #4c63b6;
     outline: none;
 }
 
-.button {
+button {
     color: white;
     background-color: #4c63b6;
     font-family: 'Roboto', sans-serif;
@@ -94,11 +70,17 @@ body {
     transition: background-color 0.3s ease;
 }
 
-.button:hover {
+button:hover {
     background-color: #3a4f9c;
 }
 
-.label-container {
+ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+li {
     background-color: #e6f6ff;
     width: 100%;
     border-left: 5px solid #096f92;
@@ -109,41 +91,63 @@ body {
     transition: background-color 0.3s ease;
 }
 
-.label-container:hover {
+li:hover {
     background-color: #d4efff;
 }
 
-.checkbox-input {
-    width: 20px;
-    height: 20px;
-    margin-right: 12px;
+li button {
+    background: #dc3545;
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.checkbox-label {
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    flex: 1;
-    margin: 0;
+li button:hover {
+    background: #c82333;
+}
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes slide-out {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
 }
 
+button {
+    animation: pulse 2s infinite;
+}
+button {
+    background-color: #4c63b6;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #3a4f9c;
+}
+ 
 .delete-icon-container {
-    text-align: right;
-    flex: none;
+    margin-left: 100px;;
 }
 
 .delete-icon {
-    padding: 15px;
     cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-.delete-icon:hover {
-    color: #ff6b6b;
-}
-
-.checked {
-    text-decoration: line-through;
-    color: #999;
+    color: red;
+    margin-left:50px;
 }
