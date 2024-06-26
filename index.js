@@ -22,4 +22,4 @@ function addTask(taskText) {
 
     li.appendChild(deleteButton);
     todoList.appendChild(li);
-}
+};
